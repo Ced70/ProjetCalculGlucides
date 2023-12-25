@@ -18,6 +18,10 @@ struct BarcodeReaderView: View {
     var body: some View {
         ZStack {
             BarcodeReaderCell(scannedCode: $scannedCode)
+            Rectangle()
+                .stroke(lineWidth: 3)
+                .frame(height: 150)
+                .padding(20)
             VStack {
                 Spacer()
                 HStack {

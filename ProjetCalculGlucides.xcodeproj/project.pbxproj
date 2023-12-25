@@ -24,6 +24,8 @@
 		82A6F1052B39D1E6007E4D9B /* toggleTorch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1042B39D1E6007E4D9B /* toggleTorch.swift */; };
 		82A6F1082B39D280007E4D9B /* compareValueToPutRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1072B39D280007E4D9B /* compareValueToPutRatio.swift */; };
 		82A6F10A2B39E428007E4D9B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1092B39E428007E4D9B /* Food.swift */; };
+		82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD216F2B39F927003AD8B2 /* SearchButton.swift */; };
+		82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		82A6F1042B39D1E6007E4D9B /* toggleTorch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toggleTorch.swift; sourceTree = "<group>"; };
 		82A6F1072B39D280007E4D9B /* compareValueToPutRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = compareValueToPutRatio.swift; sourceTree = "<group>"; };
 		82A6F1092B39E428007E4D9B /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		82CD216F2B39F927003AD8B2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				82A6F0FC2B39AD39007E4D9B /* TimeOfDayButton.swift */,
 				82A6F0FE2B39AFCE007E4D9B /* TitleCell.swift */,
 				82A6F1002B39B161007E4D9B /* BarcodeReaderCell.swift */,
+				82CD216F2B39F927003AD8B2 /* SearchButton.swift */,
+				82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 				82A6F0FD2B39AD39007E4D9B /* TimeOfDayButton.swift in Sources */,
 				82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */,
 				82A6F0F02B39807C007E4D9B /* MealView.swift in Sources */,
+				82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */,
+				82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

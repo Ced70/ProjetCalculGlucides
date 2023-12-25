@@ -14,51 +14,63 @@ struct MealView: View {
     @State var actualNumberToActivate = 1
     
     @ObservedObject var ratios : Ratios
-    @State var listOfFoods : [Food] = []
+    @State var listOfFoods : [Food] = [foodPreview]
     
     var body: some View {
-        VStack {
-            TitleCell(text: "Mon repas")
-            HStack {
-                TimeOfDayButton(
-                    text: "Matin",
-                    numberToActivate: 1,
-                    actualNumberToCompare: $actualNumberToActivate)
-                TimeOfDayButton(
-                    text: "Midi",
-                    numberToActivate: 2,
-                    actualNumberToCompare: $actualNumberToActivate)
-                TimeOfDayButton(
-                    text: "Goûter",
-                    numberToActivate: 3,
-                    actualNumberToCompare: $actualNumberToActivate)
-                TimeOfDayButton(
-                    text: "Soir",
-                    numberToActivate: 4,
-                    actualNumberToCompare: $actualNumberToActivate)
+        NavigationStack {
+            VStack {
+                TitleCell(text: "Mon repas")
+                HStack {
+                    TimeOfDayButton(
+                        text: "Matin",
+                        numberToActivate: 1,
+                        actualNumberToCompare: $actualNumberToActivate)
+                    TimeOfDayButton(
+                        text: "Midi",
+                        numberToActivate: 2,
+                        actualNumberToCompare: $actualNumberToActivate)
+                    TimeOfDayButton(
+                        text: "Goûter",
+                        numberToActivate: 3,
+                        actualNumberToCompare: $actualNumberToActivate)
+                    TimeOfDayButton(
+                        text: "Soir",
+                        numberToActivate: 4,
+                        actualNumberToCompare: $actualNumberToActivate)
+                }
+                .padding()
+                Text("Ton ratio sans correction : 1 ui / \(String(actualRatio)) g")
+                ScrollView {
+                    VStack {
+                        ForEach($listOfFoods) { food in
+                            NavigationLink {
+                                Text("Test")
+                            } label: {
+                                FoodCell(food: food)
+                            }
+                        }
+                        Button(action: {
+                            buttonAddIsClicked = true
+                        }, label: {
+                            VStack {
+                                Text("Ajouter un aliment")
+                                    .font(.title2)
+                                Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 30)
+                                    .foregroundColor(.primary)
+                            }.foregroundColor(.primary)
+                                .padding()
+                        })
+                    }
+                }
+                .padding()
             }
-            .padding()
-            Text("Ton ratio sans correction : 1 ui / \(String(actualRatio)) g")
-            ScrollView {
-                Text("Ajouter un aliment")
-                    .font(.largeTitle)
-                    .padding()
-                Button(action: {
-                    buttonAddIsClicked = true
-                }, label: {
-                    Image(systemName: "plus.circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 100)
-                        .foregroundColor(.primary)
-                })
-            }
-            .padding()
-
+            .sheet(isPresented: $buttonAddIsClicked, content: {
+                SearchView()
+            })
         }
-        .sheet(isPresented: $buttonAddIsClicked, content: {
-            SearchView()
-        })
         .onChange(of: actualNumberToActivate, {
             actualRatio = compareValueToPutRatio(ratios: ratios, valueActivated: actualNumberToActivate)
         })

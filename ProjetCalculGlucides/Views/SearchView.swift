@@ -25,6 +25,7 @@ struct SearchView: View {
                             .foregroundColor(.primary)
                     })
                     TextField("Aliment à rechercher ...", text: $searchString)
+                    SearchButton()
                 }
                 Spacer()
             }
