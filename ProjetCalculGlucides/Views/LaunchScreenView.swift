@@ -16,8 +16,19 @@ struct LaunchScreenView: View {
             MainView()
         }
         else {
-            VStack {
-                Text("Page de lancement")
+            ZStack {
+                Image("launchImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(20)
+                VStack {
+                    Text("GluciCalc")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.red)
+                        .padding(50)
+                    Spacer()
+                }
             }
             .padding()
             .onAppear{
