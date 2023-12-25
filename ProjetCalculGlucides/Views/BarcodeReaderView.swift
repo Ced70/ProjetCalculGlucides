@@ -12,6 +12,8 @@ struct BarcodeReaderView: View {
     
     @Binding var scannedCode : String
     @State var lampIsActivated = false
+
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -35,6 +37,9 @@ struct BarcodeReaderView: View {
                 .padding(.horizontal, 40)
             }
         }
+        .onChange(of: scannedCode, {
+            dismiss()
+        })
     }
 }
 
