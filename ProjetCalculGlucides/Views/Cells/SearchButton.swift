@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SearchButton: View {
+    
+    @Binding var buttonIsClicked : Bool
+    
     var body: some View {
         Button(action: {
-            
+            buttonIsClicked = true
         }, label: {
             VStack {
                 ZStack {
@@ -29,5 +32,5 @@ struct SearchButton: View {
 }
 
 #Preview {
-    SearchButton()
+    SearchButton(buttonIsClicked: .constant(false))
 }

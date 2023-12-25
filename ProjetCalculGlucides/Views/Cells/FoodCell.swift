@@ -9,12 +9,12 @@ import SwiftUI
 
 struct FoodCell: View {
     
-    @Binding var food : Food
+    @ObservedObject var food : Food
     
     var body: some View {
         ZStack {
             Rectangle()
-                .stroke(lineWidth: /*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                .stroke(lineWidth: 1)
                 .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                 .padding(.horizontal, 0)
                 .padding(.vertical, 5)
@@ -31,7 +31,7 @@ struct FoodCell: View {
                     .clipped()
                 VStack (alignment: .leading) {
                     Text(food.name)
-                        .font(.title)
+                        .font(.title3)
                         .multilineTextAlignment(.leading)
                     Text("Poids : \(String(format: "%g", food.weight)) g")
                 }
@@ -52,5 +52,5 @@ struct FoodCell: View {
 }
 
 #Preview {
-    FoodCell(food: .constant(foodPreview))
+    FoodCell(food: foodPreview)
 }

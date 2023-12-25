@@ -11,6 +11,9 @@ struct SearchView: View {
     
     @State var searchString : String = ""
     @State var barcodeButtonIsClicked = false
+    @State var searchButtonIsClicked = false
+    
+    @StateObject var food = Food(name: "", weight: 0, glucidPerHundredGrams: 0, urlImage: "")
     
     var body: some View {
         VStack {
@@ -25,7 +28,10 @@ struct SearchView: View {
                             .foregroundColor(.primary)
                     })
                     TextField("Aliment à rechercher ...", text: $searchString)
-                    SearchButton()
+                    SearchButton(buttonIsClicked: $searchButtonIsClicked)
+                }
+                if !food.name.isEmpty {
+                    FoodCell(food: food)
                 }
                 Spacer()
             }
@@ -34,6 +40,12 @@ struct SearchView: View {
         .sheet(isPresented: $barcodeButtonIsClicked, content: {
             BarcodeReaderView(scannedCode: $searchString)
         })
+        .onChange(of: searchButtonIsClicked, {
+            Task {
+                await food.receiveInformationBarCode(barcodeScanned: searchString)
+                print("SearchView : food.name = \(food.name)")
+            }
+        } )
     }
 }
 

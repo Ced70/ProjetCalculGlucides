@@ -10,6 +10,8 @@ import AVFoundation
 
 struct BarcodeReaderView: View {
     
+    let torchManager = TorchManager()
+    
     @Binding var scannedCode : String
     @State var lampIsActivated = false
 
@@ -29,7 +31,7 @@ struct BarcodeReaderView: View {
                     Button(action: {
                         lampIsActivated = !lampIsActivated
                         UINotificationFeedbackGenerator().notificationOccurred(.success)
-                        toggleTorch(on: lampIsActivated)
+                        torchManager.toggleTorch(on: lampIsActivated)
                     }, label: {
                         Image(systemName: lampIsActivated ? "flashlight.on.circle.fill" : "flashlight.on.circle")
                             .resizable()

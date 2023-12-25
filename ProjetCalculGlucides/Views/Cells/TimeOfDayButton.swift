@@ -10,12 +10,12 @@ import SwiftUI
 struct TimeOfDayButton: View {
     
     let text : String
-    let numberToActivate : Int
-    @Binding var actualNumberToCompare : Int
+    @ObservedObject var ratios : Ratios
+    var timeOfDay : Ratios.TimeOfRatio
     
     var body: some View {
         Button(action: {
-            actualNumberToCompare = numberToActivate
+            ratios.timeOfRatioSelected = timeOfDay
         }, label: {
             ZStack {
                 Circle()
@@ -26,10 +26,10 @@ struct TimeOfDayButton: View {
             }
         })
         .padding(4)
-        .foregroundColor(numberToActivate == actualNumberToCompare ? .blue : .primary)
+        .foregroundColor(ratios.timeOfRatioSelected == timeOfDay ? .blue : .primary)
     }
 }
 
 #Preview {
-    TimeOfDayButton(text: "Matin", numberToActivate: 1, actualNumberToCompare: .constant(1))
+    TimeOfDayButton(text: "Matin", ratios: ratioPreview, timeOfDay: .gouter)
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E422B3C3A5E005FEAD6 /* TorchManager.swift */; };
 		82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */; };
 		82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F0E02B397A8A007E4D9B /* LaunchScreenView.swift */; };
 		82A6F0E32B397A8A007E4D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A6F0E22B397A8A007E4D9B /* Assets.xcassets */; };
@@ -21,14 +22,14 @@
 		82A6F0FF2B39AFCE007E4D9B /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F0FE2B39AFCE007E4D9B /* TitleCell.swift */; };
 		82A6F1012B39B162007E4D9B /* BarcodeReaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1002B39B161007E4D9B /* BarcodeReaderCell.swift */; };
 		82A6F1032B39C20B007E4D9B /* BarcodeReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1022B39C20B007E4D9B /* BarcodeReaderView.swift */; };
-		82A6F1052B39D1E6007E4D9B /* toggleTorch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1042B39D1E6007E4D9B /* toggleTorch.swift */; };
-		82A6F1082B39D280007E4D9B /* compareValueToPutRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1072B39D280007E4D9B /* compareValueToPutRatio.swift */; };
 		82A6F10A2B39E428007E4D9B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1092B39E428007E4D9B /* Food.swift */; };
 		82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD216F2B39F927003AD8B2 /* SearchButton.swift */; };
 		82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */; };
+		82D10AE72B3B72690009FEF2 /* MenuOfFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82600E422B3C3A5E005FEAD6 /* TorchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchManager.swift; sourceTree = "<group>"; };
 		82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetCalculGlucides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetCalculGlucidesApp.swift; sourceTree = "<group>"; };
 		82A6F0E02B397A8A007E4D9B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -44,11 +45,10 @@
 		82A6F0FE2B39AFCE007E4D9B /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		82A6F1002B39B161007E4D9B /* BarcodeReaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeReaderCell.swift; sourceTree = "<group>"; };
 		82A6F1022B39C20B007E4D9B /* BarcodeReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeReaderView.swift; sourceTree = "<group>"; };
-		82A6F1042B39D1E6007E4D9B /* toggleTorch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toggleTorch.swift; sourceTree = "<group>"; };
-		82A6F1072B39D280007E4D9B /* compareValueToPutRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = compareValueToPutRatio.swift; sourceTree = "<group>"; };
 		82A6F1092B39E428007E4D9B /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		82CD216F2B39F927003AD8B2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOfFoods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +85,6 @@
 				82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */,
 				82A6F0EC2B397BE6007E4D9B /* Views */,
 				82A6F0F62B3984F1007E4D9B /* Classes */,
-				82A6F0F92B39891C007E4D9B /* Cells */,
-				82A6F1062B39D1F0007E4D9B /* Functions */,
-				82A6F0F52B3984D2007E4D9B /* Datas */,
 				82A6F0E42B397A8A007E4D9B /* Preview Content */,
 			);
 			path = ProjetCalculGlucides;
@@ -110,15 +107,9 @@
 				82A6F0F12B39809B007E4D9B /* SearchView.swift */,
 				82A6F0F32B3980CA007E4D9B /* RatiosView.swift */,
 				82A6F1022B39C20B007E4D9B /* BarcodeReaderView.swift */,
+				82A6F0F92B39891C007E4D9B /* Cells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		82A6F0F52B3984D2007E4D9B /* Datas */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Datas;
 			sourceTree = "<group>";
 		};
 		82A6F0F62B3984F1007E4D9B /* Classes */ = {
@@ -126,6 +117,8 @@
 			children = (
 				82A6F0F72B39850B007E4D9B /* Ratios.swift */,
 				82A6F1092B39E428007E4D9B /* Food.swift */,
+				82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */,
+				82600E422B3C3A5E005FEAD6 /* TorchManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -141,15 +134,6 @@
 				82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		82A6F1062B39D1F0007E4D9B /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				82A6F1042B39D1E6007E4D9B /* toggleTorch.swift */,
-				82A6F1072B39D280007E4D9B /* compareValueToPutRatio.swift */,
-			);
-			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,17 +211,17 @@
 				82A6F10A2B39E428007E4D9B /* Food.swift in Sources */,
 				82A6F0F82B39850B007E4D9B /* Ratios.swift in Sources */,
 				82A6F0FB2B398932007E4D9B /* RatioCell.swift in Sources */,
-				82A6F1052B39D1E6007E4D9B /* toggleTorch.swift in Sources */,
 				82A6F0FF2B39AFCE007E4D9B /* TitleCell.swift in Sources */,
+				82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */,
 				82A6F0F22B39809B007E4D9B /* SearchView.swift in Sources */,
 				82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */,
 				82A6F0F42B3980CA007E4D9B /* RatiosView.swift in Sources */,
 				82A6F0EE2B397BFE007E4D9B /* MainView.swift in Sources */,
-				82A6F1082B39D280007E4D9B /* compareValueToPutRatio.swift in Sources */,
 				82A6F0FD2B39AD39007E4D9B /* TimeOfDayButton.swift in Sources */,
 				82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */,
 				82A6F0F02B39807C007E4D9B /* MealView.swift in Sources */,
 				82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */,
+				82D10AE72B3B72690009FEF2 /* MenuOfFoods.swift in Sources */,
 				82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

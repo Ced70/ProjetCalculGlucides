@@ -14,7 +14,7 @@ struct MealView: View {
     @State var actualNumberToActivate = 1
     
     @ObservedObject var ratios : Ratios
-    @State var listOfFoods : [Food] = [foodPreview]
+    @StateObject var menuOfFoods = MenuOfFoods()
     
     var body: some View {
         NavigationStack {
@@ -23,26 +23,26 @@ struct MealView: View {
                 HStack {
                     TimeOfDayButton(
                         text: "Matin",
-                        numberToActivate: 1,
-                        actualNumberToCompare: $actualNumberToActivate)
+                        ratios: ratios,
+                        timeOfDay: .matin)
                     TimeOfDayButton(
                         text: "Midi",
-                        numberToActivate: 2,
-                        actualNumberToCompare: $actualNumberToActivate)
+                        ratios: ratios,
+                        timeOfDay: .midi)
                     TimeOfDayButton(
                         text: "Goûter",
-                        numberToActivate: 3,
-                        actualNumberToCompare: $actualNumberToActivate)
+                        ratios: ratios,
+                        timeOfDay: .gouter)
                     TimeOfDayButton(
                         text: "Soir",
-                        numberToActivate: 4,
-                        actualNumberToCompare: $actualNumberToActivate)
+                        ratios: ratios,
+                        timeOfDay: .soir)
                 }
                 .padding()
-                Text("Ton ratio sans correction : 1 ui / \(String(actualRatio)) g")
+                Text("Ton ratio sans correction : 1 ui / \(String(ratios.actualRatio)) g")
                 ScrollView {
                     VStack {
-                        ForEach($listOfFoods) { food in
+                        ForEach(menuOfFoods.list) { food in
                             NavigationLink {
                                 Text("Test")
                             } label: {
@@ -71,9 +71,6 @@ struct MealView: View {
                 SearchView()
             })
         }
-        .onChange(of: actualNumberToActivate, {
-            actualRatio = compareValueToPutRatio(ratios: ratios, valueActivated: actualNumberToActivate)
-        })
     }
 }
 
