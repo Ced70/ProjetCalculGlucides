@@ -9,25 +9,26 @@ import Foundation
 
 class Food: ObservableObject, Identifiable {
     let id = UUID()
-    @Published var name : String
-    @Published var urlImage: String
-    @Published var weight: Float {
+    @Published var name : String = ""
+    @Published var urlImage: String = ""
+    @Published var weight: Float = 100.0 {
         didSet {
             calculGlucides()
         }
     }
-    @Published var glucidPerHundredGrams: Float {
+    @Published var glucidPerHundredGrams: Float = 0.0 {
         didSet {
             calculGlucides()
         }
     }
     @Published var glucids : Float = 0.0
     
-    init(name: String, weight: Float, glucidPerHundredGrams: Float, urlImage: String) {
+    init() {
+        calculGlucides()
+    }
+    
+    init(name : String) {
         self.name = name
-        self.weight = weight
-        self.glucidPerHundredGrams = glucidPerHundredGrams
-        self.urlImage = urlImage
         calculGlucides()
     }
     
@@ -65,8 +66,4 @@ class Food: ObservableObject, Identifiable {
     }
 }
 
-var foodPreview = Food(name: "Frites",
-                       weight: 120,
-                       glucidPerHundredGrams: 75,
-                       urlImage: "https://media.istockphoto.com/id/531189325/fr/photo/restauration-rapide.jpg?s=2048x2048&w=is&k=20&c=TN4IbP_7cBwsP5-UuRDNcUjiMhqaO6CIlC5lFaqMuAM="
-)
+var foodPreview = Food(name: "Test")

@@ -15,10 +15,10 @@ struct RatiosView: View {
         VStack {
             TitleCell(text: " Mes ratios")
             VStack {
-                RatioCell(systemName: "cup.and.saucer", text: "Matin", value: $ratios.matin)
-                RatioCell(systemName: "sun.max", text: "Midi", value: $ratios.midi)
-                RatioCell(systemName: "birthday.cake", text: "Goûter", value: $ratios.gouter)
-                RatioCell(systemName: "moon", text: "Soir", value: $ratios.soir)
+                RatioCell(systemName: "cup.and.saucer", text: "Matin", value: $ratios.valueBreakfast)
+                RatioCell(systemName: "sun.max", text: "Midi", value: $ratios.valueLunch)
+                RatioCell(systemName: "birthday.cake", text: "Goûter", value: $ratios.valueSnack)
+                RatioCell(systemName: "moon", text: "Soir", value: $ratios.valueDinner)
                 Text("1 ui / 8 g : représente 1 Unité d'insuline pour 8g de glucides")
                     .padding()
             }

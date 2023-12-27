@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E422B3C3A5E005FEAD6 /* TorchManager.swift */; };
+		82600E452B3C5A11005FEAD6 /* AddMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */; };
+		82600E472B3C5F35005FEAD6 /* DetailsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */; };
 		82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */; };
 		82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F0E02B397A8A007E4D9B /* LaunchScreenView.swift */; };
 		82A6F0E32B397A8A007E4D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A6F0E22B397A8A007E4D9B /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		82600E422B3C3A5E005FEAD6 /* TorchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchManager.swift; sourceTree = "<group>"; };
+		82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuButton.swift; sourceTree = "<group>"; };
+		82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodView.swift; sourceTree = "<group>"; };
 		82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetCalculGlucides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetCalculGlucidesApp.swift; sourceTree = "<group>"; };
 		82A6F0E02B397A8A007E4D9B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				82A6F0F12B39809B007E4D9B /* SearchView.swift */,
 				82A6F0F32B3980CA007E4D9B /* RatiosView.swift */,
 				82A6F1022B39C20B007E4D9B /* BarcodeReaderView.swift */,
+				82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */,
 				82A6F0F92B39891C007E4D9B /* Cells */,
 			);
 			path = Views;
@@ -132,6 +137,7 @@
 				82A6F1002B39B161007E4D9B /* BarcodeReaderCell.swift */,
 				82CD216F2B39F927003AD8B2 /* SearchButton.swift */,
 				82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */,
+				82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -217,9 +223,11 @@
 				82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */,
 				82A6F0F42B3980CA007E4D9B /* RatiosView.swift in Sources */,
 				82A6F0EE2B397BFE007E4D9B /* MainView.swift in Sources */,
+				82600E472B3C5F35005FEAD6 /* DetailsFoodView.swift in Sources */,
 				82A6F0FD2B39AD39007E4D9B /* TimeOfDayButton.swift in Sources */,
 				82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */,
 				82A6F0F02B39807C007E4D9B /* MealView.swift in Sources */,
+				82600E452B3C5A11005FEAD6 /* AddMenuButton.swift in Sources */,
 				82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */,
 				82D10AE72B3B72690009FEF2 /* MenuOfFoods.swift in Sources */,
 				82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */,

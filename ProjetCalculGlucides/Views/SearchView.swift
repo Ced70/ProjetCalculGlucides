@@ -9,11 +9,14 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @ObservedObject var menuOfFoods : MenuOfFoods
+    
     @State var searchString : String = ""
     @State var barcodeButtonIsClicked = false
     @State var searchButtonIsClicked = false
+    @State var addButtonIsClicked = false
     
-    @StateObject var food = Food(name: "", weight: 0, glucidPerHundredGrams: 0, urlImage: "")
+    @StateObject var food = Food()
     
     var body: some View {
         VStack {
@@ -32,8 +35,12 @@ struct SearchView: View {
                 }
                 if !food.name.isEmpty {
                     FoodCell(food: food)
+                    Spacer()
+                    AddMenuButton(buttonIsClicked: $addButtonIsClicked)
                 }
-                Spacer()
+                else {
+                    Spacer()
+                }
             }
             .padding()
         }
@@ -46,9 +53,14 @@ struct SearchView: View {
                 print("SearchView : food.name = \(food.name)")
             }
         } )
+        .onChange(of: addButtonIsClicked, {
+            menuOfFoods.list.append(food)
+            searchString = ""
+            food.name = ""
+        })
     }
 }
 
 #Preview {
-    SearchView()
+    SearchView(menuOfFoods: MenuOfFoods())
 }

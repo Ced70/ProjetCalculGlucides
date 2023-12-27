@@ -9,25 +9,25 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject var ratios = Ratios(matin: 15, midi: 15, gouter: 15, soir: 15)
+    @StateObject var menuOfFoods = MenuOfFoods()
     
     var body: some View {
         TabView {
-            MealView(ratios: ratios)
+            MealView(menuOfFoods: menuOfFoods, ratios: menuOfFoods.ratios)
                 .tabItem { 
                     VStack {
                         Image(systemName: "fork.knife")
                         Text("Repas") }
                     }
                     
-            SearchView()
+            SearchView(menuOfFoods: menuOfFoods)
                 .tabItem {
                     VStack {
                         Image(systemName: "magnifyingglass")
                         Text("Rechercher")
                     }
                 }
-            RatiosView(ratios: ratios)
+            RatiosView(ratios: menuOfFoods.ratios)
                 .tabItem {
                     VStack {
                         Image(systemName: "divide")

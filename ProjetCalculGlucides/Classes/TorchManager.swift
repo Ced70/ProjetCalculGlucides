@@ -28,5 +28,4 @@ class TorchManager {
             print("Erreur lors de l'activation de la lampe torche : \(error)")
         }
     }
-    
 }

@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct MealView: View {
+
+    @ObservedObject var menuOfFoods : MenuOfFoods
+    @ObservedObject var ratios : Ratios
     
     @State var buttonAddIsClicked = false
-    @State var actualRatio : Int = 1
-    @State var actualNumberToActivate = 1
-    
-    @ObservedObject var ratios : Ratios
-    @StateObject var menuOfFoods = MenuOfFoods()
     
     var body: some View {
         NavigationStack {
@@ -24,19 +22,19 @@ struct MealView: View {
                     TimeOfDayButton(
                         text: "Matin",
                         ratios: ratios,
-                        timeOfDay: .matin)
+                        timeOfDay: .breakfast)
                     TimeOfDayButton(
                         text: "Midi",
                         ratios: ratios,
-                        timeOfDay: .midi)
+                        timeOfDay: .lunch)
                     TimeOfDayButton(
                         text: "Goûter",
                         ratios: ratios,
-                        timeOfDay: .gouter)
+                        timeOfDay: .snack)
                     TimeOfDayButton(
                         text: "Soir",
                         ratios: ratios,
-                        timeOfDay: .soir)
+                        timeOfDay: .dinner)
                 }
                 .padding()
                 Text("Ton ratio sans correction : 1 ui / \(String(ratios.actualRatio)) g")
@@ -44,36 +42,48 @@ struct MealView: View {
                     VStack {
                         ForEach(menuOfFoods.list) { food in
                             NavigationLink {
-                                Text("Test")
+                                DetailsFoodView(food: food)
                             } label: {
                                 FoodCell(food: food)
                             }
                         }
-                        Button(action: {
-                            buttonAddIsClicked = true
-                        }, label: {
-                            VStack {
-                                Text("Ajouter un aliment")
-                                    .font(.title2)
-                                Image(systemName: "plus.circle")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 30)
-                                    .foregroundColor(.primary)
-                            }.foregroundColor(.primary)
-                                .padding()
-                        })
                     }
+                    Button(action: {
+                        buttonAddIsClicked = true
+                    }, label: {
+                        VStack {
+                            Text("Ajouter un aliment")
+                                .font(.title2)
+                            Image(systemName: "plus.circle")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 30)
+                                .foregroundColor(.primary)
+                        }.foregroundColor(.primary)
+                    })
                 }
                 .padding()
+                if !menuOfFoods.list.isEmpty {
+                    Text("Total de glucides : \(String(format: "%.1f" , menuOfFoods.totalOfGlucids))")
+                        .font(.title3)
+                    Text("Dose d'insuline à prendre : \(String(format: "%.1f", menuOfFoods.doseInsuline))")
+                        .font(.title3)
+                        .foregroundStyle(.red)
+                        .bold()
+                }
             }
+            .padding()
             .sheet(isPresented: $buttonAddIsClicked, content: {
-                SearchView()
+                SearchView(menuOfFoods: menuOfFoods)
+            })
+            .onChange(of: ratios.actualRatio, {
+                menuOfFoods.calculOfGlucidsTotal()
+                menuOfFoods.calculOfInsulin()
             })
         }
     }
 }
 
 #Preview {
-    MealView(ratios: ratioPreview)
+    MealView(menuOfFoods: MenuOfFoods(), ratios:Ratios())
 }

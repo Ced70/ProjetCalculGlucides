@@ -9,61 +9,59 @@ import Foundation
 
 class Ratios : ObservableObject {
     
-    @Published var matin : Int {
+    @Published var valueBreakfast : Int {
         didSet {
             actualRatio = getActualRatio()
         }
     }
-    @Published var midi : Int {
+    @Published var valueLunch : Int {
         didSet {
             actualRatio = getActualRatio()
         }
     }
-    @Published var gouter : Int {
+    @Published var valueSnack : Int {
         didSet {
             actualRatio = getActualRatio()
         }
     }
-    @Published var soir : Int {
+    @Published var valueDinner : Int {
         didSet {
             actualRatio = getActualRatio()
         }
     }
-    @Published var actualRatio = 0
-    
+    @Published var actualRatio : Int = 0
     enum TimeOfRatio {
-        case matin
-        case midi
-        case gouter
-        case soir
+        case breakfast
+        case lunch
+        case snack
+        case dinner
     }
-    
-    @Published var timeOfRatioSelected: TimeOfRatio = .matin {
+    @Published var timeOfRatioSelected: TimeOfRatio = .breakfast {
         didSet {
             actualRatio = getActualRatio()
         }
     }
     
-    init(matin: Int, midi: Int, gouter: Int, soir: Int) {
-        self.matin = matin
-        self.midi = midi
-        self.gouter = gouter
-        self.soir = soir
+    init() {
+        valueBreakfast = 10
+        valueLunch = 15
+        valueSnack = 20
+        valueDinner = 25
         actualRatio = getActualRatio()
     }
-    
+        
     func getActualRatio() -> Int {
         switch timeOfRatioSelected {
-        case .matin :
-            return matin
-        case .midi :
-            return midi
-        case .gouter :
-            return gouter
-        case .soir :
-            return soir
+        case .breakfast :
+            return valueBreakfast
+        case .lunch :
+            return valueLunch
+        case .snack :
+            return valueSnack
+        case .dinner :
+            return valueDinner
         }
     }
 }
 
-var ratioPreview = Ratios(matin: 10, midi: 20, gouter: 30, soir: 40)
+var ratioPreview = Ratios()

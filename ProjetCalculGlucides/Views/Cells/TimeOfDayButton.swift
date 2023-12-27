@@ -31,5 +31,5 @@ struct TimeOfDayButton: View {
 }
 
 #Preview {
-    TimeOfDayButton(text: "Matin", ratios: ratioPreview, timeOfDay: .gouter)
+    TimeOfDayButton(text: "Matin", ratios: ratioPreview, timeOfDay: .snack)
 }
