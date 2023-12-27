@@ -53,9 +53,11 @@ class Food: ObservableObject, Identifiable {
                     let nutriments = product["nutriments"] as? [String: Any]
                     let glucidesPer100 = nutriments?["carbohydrates_100g"] as? Float
                     
-                    self.name = name ?? ""
-                    self.urlImage = imageUrl ?? ""
-                    self.glucidPerHundredGrams = glucidesPer100 ?? 0
+                    DispatchQueue.main.async {
+                        self.name = name ?? ""
+                        self.urlImage = imageUrl ?? ""
+                        self.glucidPerHundredGrams = glucidesPer100 ?? 0
+                    }
                 }
             } catch {
                 print("Erreur lors de la requête ou du décodage JSON : \(error)")

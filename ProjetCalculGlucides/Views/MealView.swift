@@ -80,6 +80,10 @@ struct MealView: View {
                 menuOfFoods.calculOfGlucidsTotal()
                 menuOfFoods.calculOfInsulin()
             })
+            .onAppear(perform: {
+                menuOfFoods.calculOfGlucidsTotal()
+                menuOfFoods.calculOfInsulin()
+            })
         }
     }
 }

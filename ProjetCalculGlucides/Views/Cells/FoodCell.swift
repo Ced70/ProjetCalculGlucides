@@ -41,10 +41,6 @@ struct FoodCell: View {
                 }
                 .foregroundColor(.red)
                 Spacer()
-                Image(systemName: "arrowtriangle.right.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 20, height: 20)
             }
             .padding(5)
         }

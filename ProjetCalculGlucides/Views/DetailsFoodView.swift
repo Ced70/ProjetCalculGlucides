@@ -29,11 +29,11 @@ struct DetailsFoodView: View {
             AsyncImage(url: URL(string:food.urlImage)) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
             } placeholder: {
                 Rectangle()
             }.aspectRatio(contentMode: .fill)
-                .frame(width: .infinity, height: 200)
+                .frame(height: 200)
                 .clipped()
             Text(food.name)
                 .font(.title)
@@ -45,6 +45,7 @@ struct DetailsFoodView: View {
                         .font(.title2)
                         .frame(maxWidth: 50)
                         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .keyboardType(.numberPad)
                     Text("g")
                         .font(.title2)
                     Spacer()
