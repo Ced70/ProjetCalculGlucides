@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @ObservedObject var menuOfFoods : MenuOfFoods
+    @ObservedObject var meal : Meal
     
     @State var searchString : String = ""
     @State var barcodeButtonIsClicked = false
@@ -54,7 +54,7 @@ struct SearchView: View {
             }
         } )
         .onChange(of: addButtonIsClicked, {
-            menuOfFoods.list.append(food)
+            meal.list.append(food)
             searchString = ""
             food.name = ""
         })
@@ -62,5 +62,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(menuOfFoods: MenuOfFoods())
+    SearchView(meal: Meal())
 }

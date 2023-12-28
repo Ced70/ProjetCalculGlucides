@@ -32,7 +32,7 @@ struct DetailsFoodView: View {
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
                 Rectangle()
-            }.aspectRatio(contentMode: .fill)
+            }.aspectRatio(contentMode: .fit)
                 .frame(height: 200)
                 .clipped()
             Text(food.name)

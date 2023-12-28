@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MenuOfFoods : ObservableObject {
+class Meal : ObservableObject {
     @Published var list : [Food] = [] {
         didSet {
             calculOfGlucidsTotal()

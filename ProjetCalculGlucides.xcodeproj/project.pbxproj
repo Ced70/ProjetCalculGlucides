@@ -27,7 +27,7 @@
 		82A6F10A2B39E428007E4D9B /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6F1092B39E428007E4D9B /* Food.swift */; };
 		82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD216F2B39F927003AD8B2 /* SearchButton.swift */; };
 		82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */; };
-		82D10AE72B3B72690009FEF2 /* MenuOfFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */; };
+		82D10AE72B3B72690009FEF2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D10AE62B3B72690009FEF2 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 		82A6F1092B39E428007E4D9B /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		82CD216F2B39F927003AD8B2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
-		82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOfFoods.swift; sourceTree = "<group>"; };
+		82D10AE62B3B72690009FEF2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			children = (
 				82A6F0F72B39850B007E4D9B /* Ratios.swift */,
 				82A6F1092B39E428007E4D9B /* Food.swift */,
-				82D10AE62B3B72690009FEF2 /* MenuOfFoods.swift */,
+				82D10AE62B3B72690009FEF2 /* Meal.swift */,
 				82600E422B3C3A5E005FEAD6 /* TorchManager.swift */,
 			);
 			path = Classes;
@@ -229,7 +229,7 @@
 				82A6F0F02B39807C007E4D9B /* MealView.swift in Sources */,
 				82600E452B3C5A11005FEAD6 /* AddMenuButton.swift in Sources */,
 				82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */,
-				82D10AE72B3B72690009FEF2 /* MenuOfFoods.swift in Sources */,
+				82D10AE72B3B72690009FEF2 /* Meal.swift in Sources */,
 				82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

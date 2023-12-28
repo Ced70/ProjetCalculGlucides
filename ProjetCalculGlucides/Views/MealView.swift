@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealView: View {
 
-    @ObservedObject var menuOfFoods : MenuOfFoods
+    @ObservedObject var meal : Meal
     @ObservedObject var ratios : Ratios
     
     @State var buttonAddIsClicked = false
@@ -40,7 +40,7 @@ struct MealView: View {
                 Text("Ton ratio sans correction : 1 ui / \(String(ratios.actualRatio)) g")
                 ScrollView {
                     VStack {
-                        ForEach(menuOfFoods.list) { food in
+                        ForEach(meal.list) { food in
                             NavigationLink {
                                 DetailsFoodView(food: food)
                             } label: {
@@ -63,10 +63,10 @@ struct MealView: View {
                     })
                 }
                 .padding()
-                if !menuOfFoods.list.isEmpty {
-                    Text("Total de glucides : \(String(format: "%.1f" , menuOfFoods.totalOfGlucids))")
+                if !meal.list.isEmpty {
+                    Text("Total de glucides : \(String(format: "%.1f" , meal.totalOfGlucids))")
                         .font(.title3)
-                    Text("Dose d'insuline à prendre : \(String(format: "%.1f", menuOfFoods.doseInsuline))")
+                    Text("Dose d'insuline à prendre : \(String(format: "%.1f", meal.doseInsuline))")
                         .font(.title3)
                         .foregroundStyle(.red)
                         .bold()
@@ -74,20 +74,20 @@ struct MealView: View {
             }
             .padding()
             .sheet(isPresented: $buttonAddIsClicked, content: {
-                SearchView(menuOfFoods: menuOfFoods)
+                SearchView(meal: meal)
             })
             .onChange(of: ratios.actualRatio, {
-                menuOfFoods.calculOfGlucidsTotal()
-                menuOfFoods.calculOfInsulin()
+                meal.calculOfGlucidsTotal()
+                meal.calculOfInsulin()
             })
             .onAppear(perform: {
-                menuOfFoods.calculOfGlucidsTotal()
-                menuOfFoods.calculOfInsulin()
+                meal.calculOfGlucidsTotal()
+                meal.calculOfInsulin()
             })
         }
     }
 }
 
 #Preview {
-    MealView(menuOfFoods: MenuOfFoods(), ratios:Ratios())
+    MealView(meal: Meal(), ratios:Ratios())
 }
