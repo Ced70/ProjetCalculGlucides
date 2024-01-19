@@ -20,11 +20,16 @@ struct BarcodeReaderView: View {
     var body: some View {
         ZStack {
             BarcodeReaderCell(scannedCode: $scannedCode)
-            Rectangle()
-                .stroke(lineWidth: 3)
-                .frame(height: 150)
-                .padding(20)
+//            Rectangle()
+//                .stroke(lineWidth: 3)
+//                .frame(height: 150)
+//                .padding(20)
             VStack {
+                Text("Cliquer sur le code barre lorsque celui-ci est en surbrillance")
+                    .foregroundStyle(.red)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .padding(40)
+                    .multilineTextAlignment(.center)
                 Spacer()
                 HStack {
                     Spacer()

@@ -25,6 +25,9 @@ struct RatiosView: View {
             .padding()
             Spacer()
         }
+        .onDisappear(perform: {
+            ratios.saveToFile()
+        })
     }
 }
 

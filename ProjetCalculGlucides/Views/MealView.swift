@@ -13,6 +13,7 @@ struct MealView: View {
     @ObservedObject var ratios : Ratios
     
     @State var buttonAddIsClicked = false
+    @State var idCellSelected : UUID?
     
     var body: some View {
         NavigationStack {
@@ -42,7 +43,7 @@ struct MealView: View {
                     VStack {
                         ForEach(meal.list) { food in
                             NavigationLink {
-                                DetailsFoodView(food: food)
+                                DetailsFoodView(food: food, meal: meal)
                             } label: {
                                 FoodCell(food: food)
                             }
@@ -62,7 +63,7 @@ struct MealView: View {
                         }.foregroundColor(.primary)
                     })
                 }
-                .padding()
+
                 if !meal.list.isEmpty {
                     Text("Total de glucides : \(String(format: "%.1f" , meal.totalOfGlucids))")
                         .font(.title3)

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8220C21D2B544A4000C21A41 /* Ciqual_2020.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 8220C21C2B544A4000C21A41 /* Ciqual_2020.sqlite3 */; };
+		822711182B3E26B3008767E7 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822711172B3E26B3008767E7 /* DeleteButton.swift */; };
+		824FA3902B49A8B700A0AB34 /* FoodCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824FA38F2B49A8B700A0AB34 /* FoodCellButton.swift */; };
 		82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E422B3C3A5E005FEAD6 /* TorchManager.swift */; };
 		82600E452B3C5A11005FEAD6 /* AddMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */; };
 		82600E472B3C5F35005FEAD6 /* DetailsFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */; };
@@ -28,9 +31,15 @@
 		82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD216F2B39F927003AD8B2 /* SearchButton.swift */; };
 		82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */; };
 		82D10AE72B3B72690009FEF2 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D10AE62B3B72690009FEF2 /* Meal.swift */; };
+		82D27B002B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D27AFF2B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift */; };
+		82D811432B5332250037C344 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 82D811422B5332250037C344 /* SQLite */; };
+		82E574012B3F697F00A095DC /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E574002B3F697F00A095DC /* SearchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8220C21C2B544A4000C21A41 /* Ciqual_2020.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ciqual_2020.sqlite3; path = "ProjetCalculGlucides/DB Ciqual/Ciqual_2020.sqlite3"; sourceTree = SOURCE_ROOT; };
+		822711172B3E26B3008767E7 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		824FA38F2B49A8B700A0AB34 /* FoodCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCellButton.swift; sourceTree = "<group>"; };
 		82600E422B3C3A5E005FEAD6 /* TorchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchManager.swift; sourceTree = "<group>"; };
 		82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuButton.swift; sourceTree = "<group>"; };
 		82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodView.swift; sourceTree = "<group>"; };
@@ -53,6 +62,8 @@
 		82CD216F2B39F927003AD8B2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		82D10AE62B3B72690009FEF2 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		82D27AFF2B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Openfoodfacts JSON Codable Decodable.swift"; sourceTree = "<group>"; };
+		82E574002B3F697F00A095DC /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +71,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82D811432B5332250037C344 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8220C21B2B544A1F00C21A41 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				8220C21C2B544A4000C21A41 /* Ciqual_2020.sqlite3 */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		82A6F0D22B397A89007E4D9B = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +107,7 @@
 			children = (
 				82A6F0E22B397A8A007E4D9B /* Assets.xcassets */,
 				82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */,
+				8220C21B2B544A1F00C21A41 /* DB */,
 				82A6F0EC2B397BE6007E4D9B /* Views */,
 				82A6F0F62B3984F1007E4D9B /* Classes */,
 				82A6F0E42B397A8A007E4D9B /* Preview Content */,
@@ -124,6 +145,8 @@
 				82A6F1092B39E428007E4D9B /* Food.swift */,
 				82D10AE62B3B72690009FEF2 /* Meal.swift */,
 				82600E422B3C3A5E005FEAD6 /* TorchManager.swift */,
+				82D27AFF2B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift */,
+				82E574002B3F697F00A095DC /* SearchManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -138,6 +161,8 @@
 				82CD216F2B39F927003AD8B2 /* SearchButton.swift */,
 				82CD21712B3A0FB5003AD8B2 /* FoodCell.swift */,
 				82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */,
+				822711172B3E26B3008767E7 /* DeleteButton.swift */,
+				824FA38F2B49A8B700A0AB34 /* FoodCellButton.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +183,9 @@
 			dependencies = (
 			);
 			name = ProjetCalculGlucides;
+			packageProductDependencies = (
+				82D811422B5332250037C344 /* SQLite */,
+			);
 			productName = ProjetCalculGlucides;
 			productReference = 82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 82A6F0D22B397A89007E4D9B;
+			packageReferences = (
+				82C9B7EC2B52CABC00B3FCD2 /* XCLocalSwiftPackageReference "../../../../../Downloads/SQLite.swift-master" */,
+			);
 			productRefGroup = 82A6F0DC2B397A8A007E4D9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,6 +233,7 @@
 			files = (
 				82A6F0E62B397A8A007E4D9B /* Preview Assets.xcassets in Resources */,
 				82A6F0E32B397A8A007E4D9B /* Assets.xcassets in Resources */,
+				8220C21D2B544A4000C21A41 /* Ciqual_2020.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +248,10 @@
 				82A6F1012B39B162007E4D9B /* BarcodeReaderCell.swift in Sources */,
 				82A6F10A2B39E428007E4D9B /* Food.swift in Sources */,
 				82A6F0F82B39850B007E4D9B /* Ratios.swift in Sources */,
+				822711182B3E26B3008767E7 /* DeleteButton.swift in Sources */,
 				82A6F0FB2B398932007E4D9B /* RatioCell.swift in Sources */,
 				82A6F0FF2B39AFCE007E4D9B /* TitleCell.swift in Sources */,
+				82E574012B3F697F00A095DC /* SearchManager.swift in Sources */,
 				82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */,
 				82A6F0F22B39809B007E4D9B /* SearchView.swift in Sources */,
 				82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */,
@@ -228,8 +262,10 @@
 				82A6F0DF2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift in Sources */,
 				82A6F0F02B39807C007E4D9B /* MealView.swift in Sources */,
 				82600E452B3C5A11005FEAD6 /* AddMenuButton.swift in Sources */,
+				824FA3902B49A8B700A0AB34 /* FoodCellButton.swift in Sources */,
 				82CD21702B39F927003AD8B2 /* SearchButton.swift in Sources */,
 				82D10AE72B3B72690009FEF2 /* Meal.swift in Sources */,
+				82D27B002B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift in Sources */,
 				82CD21722B3A0FB5003AD8B2 /* FoodCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +474,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		82C9B7EC2B52CABC00B3FCD2 /* XCLocalSwiftPackageReference "../../../../../Downloads/SQLite.swift-master" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../../../Downloads/SQLite.swift-master";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82D811422B5332250037C344 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82A6F0D32B397A89007E4D9B /* Project object */;
 }

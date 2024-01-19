@@ -10,6 +10,9 @@ import SwiftUI
 struct DetailsFoodView: View {
     
     @ObservedObject var food : Food
+    @ObservedObject var meal : Meal
+    @State var buttonDeleteIsClicked : Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     private var poids: Binding<String> {
         Binding<String>(
@@ -25,7 +28,7 @@ struct DetailsFoodView: View {
     }
     
     var body: some View {
-        ScrollView {
+        VStack {
             AsyncImage(url: URL(string:food.urlImage)) { image in
                 image
                     .resizable()
@@ -37,7 +40,7 @@ struct DetailsFoodView: View {
                 .clipped()
             Text(food.name)
                 .font(.title)
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 30) {
                 HStack{
                     Text("Masse : ")
                         .font(.title2)
@@ -50,18 +53,48 @@ struct DetailsFoodView: View {
                         .font(.title2)
                     Spacer()
                 }
-                .padding()
                 HStack {
-                    Text("Glucides pour 100 g : \(String(format : "%.1f", food.glucidPerHundredGrams)) g")
+                    Text("Pour 100 g : ")
+                        .font(.title2)
+                    Text(String(format : "%.1f", food.glucidPerHundredGrams))
+                        .foregroundStyle(.red)
+                        .font(.title2)
+                    Text(" g de glucides")
                         .font(.title2)
                 }
-                .padding()
-                
+                if food.weight != 100 {
+                    HStack {
+                        Text("Pour ")
+                            .font(.title2)
+                        Text(String(format : "%.0f", food.weight))
+                            .foregroundStyle(.red)
+                            .font(.title2)
+                        Text(" g : ")
+                            .font(.title2)
+                        Text(String(format : "%.1f", food.glucids))
+                            .foregroundStyle(.red)
+                            .font(.title2)
+                        Text(" g de glucides")
+                            .font(.title2)
+                    }
+                }
+                Spacer()
+                Text("Source des données : \(food.source)")
+                    .font(.title3)
+                    .foregroundStyle(.gray)
+                    .padding(.bottom, 10)
+            }.padding()
+            DeleteButton(buttonIsClicked: $buttonDeleteIsClicked)
+        }.padding()
+            .onChange(of: buttonDeleteIsClicked) {
+                if let index = meal.list.firstIndex(where: { $0.id == food.id }) {
+                    meal.list.remove(at: index)
+                }
+                presentationMode.wrappedValue.dismiss()
             }
-        }
     }
 }
 
 #Preview {
-    DetailsFoodView(food: Food())
+    DetailsFoodView(food: Food(), meal: Meal())
 }

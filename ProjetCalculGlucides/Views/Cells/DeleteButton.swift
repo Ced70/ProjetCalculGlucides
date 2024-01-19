@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct DeleteButton: View {
+    
+    @Binding var buttonIsClicked : Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            buttonIsClicked = true
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.red)
+                    .frame(width: 200, height: 50)
+                Text("Supprimer")
+                    .foregroundStyle(.primary)
+            }
+        }
     }
 }
 
 #Preview {
-    DeleteButton()
+    DeleteButton(buttonIsClicked: .constant(false))
 }

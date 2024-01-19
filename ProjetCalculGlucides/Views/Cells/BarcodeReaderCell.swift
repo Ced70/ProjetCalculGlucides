@@ -10,7 +10,7 @@ import VisionKit
 
 struct BarcodeReaderCell: UIViewControllerRepresentable {
     @Binding var scannedCode: String
-
+    
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let scannerViewController = DataScannerViewController(
             recognizedDataTypes : [.barcode()],
@@ -21,24 +21,24 @@ struct BarcodeReaderCell: UIViewControllerRepresentable {
         scannerViewController.delegate = context.coordinator
         return scannerViewController
     }
-
+    
     func updateUIViewController(_ uiViewController: DataScannerViewController, context: Context) {
         if !uiViewController.isScanning {
             try? uiViewController.startScanning()
         }
     }
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
+    
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
         var parent: BarcodeReaderCell
-
+        
         init(_ parent: BarcodeReaderCell) {
             self.parent = parent
         }
-
+        
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             switch item {
