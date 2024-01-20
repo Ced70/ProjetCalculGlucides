@@ -1,38 +1,14 @@
 //
-//  SearchManager.swift
+//  OpenFoodFactsAPIManager.swift
 //  ProjetCalculGlucides
 //
-//  Created by Cédric Gillot on 29/12/2023.
+//  Created by Cédric Gillot on 20/01/2024.
 //
 
 import Foundation
-import SQLite
 
-class SearchManager: ObservableObject {
-    
-    @Published var resultsList : [Food] = []
-    var db : Connection?
-    
-    init() {
-        self.resultsList = []
-        self.db = nil
-    }
-    
-    func updateSelection(idSelected: String) {
-        for index in resultsList.indices {
-            resultsList[index].isSelected = resultsList[index].id.uuidString == idSelected
-        }
-    }
-    
-    func searchFoodbyId(idSelected: String) -> Food? {
-        return resultsList.first { $0.id.uuidString == idSelected }
-    }
-    
-    func search(textToSearch: String) async -> [Food] {
-        var resultsList = searchToCiqual(textToSearch: textToSearch)
-        resultsList.append(contentsOf: await searchToOpenfoodFacts(textToSearch: textToSearch))
-        return resultsList
-    }
+
+struct OpenFoodFactsAPIManager {
     
     func searchToOpenfoodFacts(textToSearch: String) async -> [Food] {
         
@@ -111,35 +87,5 @@ class SearchManager: ObservableObject {
     
     func isStringNumeric(_ string: String) -> Bool {
         return string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
-    }
-    
-    func searchToCiqual(textToSearch: String) -> [Food] {
-        var resultsList : [Food] = []
-        
-        let databasePath = Bundle.main.path(forResource: "Ciqual_2020", ofType: "sqlite3")
-        do {
-            if let databasePath {
-                try self.db = Connection(databasePath)
-                print("DB ouverte")
-                if let db = self.db {
-                    let statement = try db.prepare("SELECT name FROM sqlite_master WHERE type='table'")
-                    for table in statement {
-                        if let tableName = table[0] as? String {
-                            print("Table name: \(tableName)")
-                        }
-                    }
-                    for row in try db.prepare("SELECT * FROM Ciqual_2020 WHERE alim_nom_fr LIKE '%\(textToSearch)%'") {
-                        let foodTemp = Food()
-                        foodTemp.name = row[7] as! String
-                        foodTemp.glucidPerHundredGrams = Float((row[16] as! String).replacingOccurrences(of: ",", with: ".")) ?? 0.0
-                        foodTemp.source = "Ciqual 2020"
-                        resultsList.append(foodTemp)
-                    }
-                }
-            }
-        } catch {
-            print("Erreur lors de l'ouverture de la DB")
-        }
-        return resultsList
     }
 }

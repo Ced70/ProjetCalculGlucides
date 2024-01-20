@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821A465D2B5C2C4000C97336 /* CiqualDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821A465C2B5C2C4000C97336 /* CiqualDBManager.swift */; };
+		821A465F2B5C2F5600C97336 /* OpenFoodFactsAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821A465E2B5C2F5600C97336 /* OpenFoodFactsAPIManager.swift */; };
 		8220C21D2B544A4000C21A41 /* Ciqual_2020.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 8220C21C2B544A4000C21A41 /* Ciqual_2020.sqlite3 */; };
 		822711182B3E26B3008767E7 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822711172B3E26B3008767E7 /* DeleteButton.swift */; };
 		824FA3902B49A8B700A0AB34 /* FoodCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824FA38F2B49A8B700A0AB34 /* FoodCellButton.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		821A465C2B5C2C4000C97336 /* CiqualDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiqualDBManager.swift; sourceTree = "<group>"; };
+		821A465E2B5C2F5600C97336 /* OpenFoodFactsAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsAPIManager.swift; sourceTree = "<group>"; };
 		8220C21C2B544A4000C21A41 /* Ciqual_2020.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ciqual_2020.sqlite3; path = "ProjetCalculGlucides/DB Ciqual/Ciqual_2020.sqlite3"; sourceTree = SOURCE_ROOT; };
 		822711172B3E26B3008767E7 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		824FA38F2B49A8B700A0AB34 /* FoodCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCellButton.swift; sourceTree = "<group>"; };
@@ -109,7 +113,7 @@
 				82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */,
 				8220C21B2B544A1F00C21A41 /* DB */,
 				82A6F0EC2B397BE6007E4D9B /* Views */,
-				82A6F0F62B3984F1007E4D9B /* Classes */,
+				82A6F0F62B3984F1007E4D9B /* Structures ou Classes */,
 				82A6F0E42B397A8A007E4D9B /* Preview Content */,
 			);
 			path = ProjetCalculGlucides;
@@ -138,7 +142,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		82A6F0F62B3984F1007E4D9B /* Classes */ = {
+		82A6F0F62B3984F1007E4D9B /* Structures ou Classes */ = {
 			isa = PBXGroup;
 			children = (
 				82A6F0F72B39850B007E4D9B /* Ratios.swift */,
@@ -147,8 +151,10 @@
 				82600E422B3C3A5E005FEAD6 /* TorchManager.swift */,
 				82D27AFF2B3F096F00896AAC /* Openfoodfacts JSON Codable Decodable.swift */,
 				82E574002B3F697F00A095DC /* SearchManager.swift */,
+				821A465C2B5C2C4000C97336 /* CiqualDBManager.swift */,
+				821A465E2B5C2F5600C97336 /* OpenFoodFactsAPIManager.swift */,
 			);
-			path = Classes;
+			path = "Structures ou Classes";
 			sourceTree = "<group>";
 		};
 		82A6F0F92B39891C007E4D9B /* Cells */ = {
@@ -252,9 +258,11 @@
 				82A6F0FB2B398932007E4D9B /* RatioCell.swift in Sources */,
 				82A6F0FF2B39AFCE007E4D9B /* TitleCell.swift in Sources */,
 				82E574012B3F697F00A095DC /* SearchManager.swift in Sources */,
+				821A465D2B5C2C4000C97336 /* CiqualDBManager.swift in Sources */,
 				82600E432B3C3A5E005FEAD6 /* TorchManager.swift in Sources */,
 				82A6F0F22B39809B007E4D9B /* SearchView.swift in Sources */,
 				82A6F0E12B397A8A007E4D9B /* LaunchScreenView.swift in Sources */,
+				821A465F2B5C2F5600C97336 /* OpenFoodFactsAPIManager.swift in Sources */,
 				82A6F0F42B3980CA007E4D9B /* RatiosView.swift in Sources */,
 				82A6F0EE2B397BFE007E4D9B /* MainView.swift in Sources */,
 				82600E472B3C5F35005FEAD6 /* DetailsFoodView.swift in Sources */,

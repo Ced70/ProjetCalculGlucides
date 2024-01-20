@@ -65,14 +65,16 @@ struct SearchView: View {
                 BarcodeReaderView(scannedCode: $searchString)
             })
             .onChange(of: searchButtonIsClicked, {
-                searchButtonIsClicked = false
-                isLoading = true
-                isTextFieldFocused = false
-                idSelected = ""
-                Task {
-                    searchManager.resultsList = await searchManager.search(textToSearch: searchString)
+                if searchButtonIsClicked {
+                    searchButtonIsClicked = false
+                    isLoading = true
+                    isTextFieldFocused = false
+                    idSelected = ""
+                    Task {
+                        searchManager.resultsList = await searchManager.search(textToSearch: searchString)
+                        isLoading = false
+                    }
                 }
-                isLoading = false
             } )
             .onChange(of: addButtonIsClicked, {
                 let foodToAdd = searchManager.searchFoodbyId(idSelected: idSelected)
