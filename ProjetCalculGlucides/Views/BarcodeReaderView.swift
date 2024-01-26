@@ -25,7 +25,7 @@ struct BarcodeReaderView: View {
 //                .frame(height: 150)
 //                .padding(20)
             VStack {
-                Text("Cliquer sur le code barre lorsque celui-ci est en surbrillance")
+                Text("Visez le code barre d'un aliment")
                     .foregroundStyle(.red)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .padding(40)

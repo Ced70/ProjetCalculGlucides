@@ -38,7 +38,7 @@ struct MealView: View {
                         timeOfDay: .dinner)
                 }
                 .padding()
-                Text("Ton ratio sans correction : 1 ui / \(String(ratios.actualRatio)) g")
+                Text("Ratio sans correction : 1 ui / \(String(ratios.actualRatio)) g")
                 ScrollView {
                     VStack {
                         ForEach(meal.list) { food in
@@ -65,7 +65,7 @@ struct MealView: View {
                 }
 
                 if !meal.list.isEmpty {
-                    Text("Total de glucides : \(String(format: "%.1f" , meal.totalOfGlucids))")
+                    Text("Total de glucides : \(String(format: "%.1f" , meal.totalOfGlucids)) g")
                         .font(.title3)
                     Text("Dose d'insuline à prendre : \(String(format: "%.1f", meal.doseInsuline))")
                         .font(.title3)

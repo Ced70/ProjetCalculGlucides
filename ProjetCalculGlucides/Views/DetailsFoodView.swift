@@ -14,6 +14,8 @@ struct DetailsFoodView: View {
     @State var buttonDeleteIsClicked : Bool = false
     @Environment(\.presentationMode) var presentationMode
     
+    @FocusState private var isInputActive: Bool
+    
     private var poids: Binding<String> {
         Binding<String>(
             get: {
@@ -45,10 +47,22 @@ struct DetailsFoodView: View {
                     Text("Masse : ")
                         .font(.title2)
                     TextField("", text: poids)
+                        .focused($isInputActive)
                         .font(.title2)
                         .frame(maxWidth: 50)
                         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                         .keyboardType(.numberPad)
+                        .toolbar(content: {
+                            ToolbarItem(placement: .keyboard, content: {
+                                Button(action: {
+                                    isInputActive = false
+                                }, label: {
+                                    Text("Valider")
+                                        .foregroundStyle(.green)
+                                        .bold()
+                                })
+                            })
+                        })
                     Text("g")
                         .font(.title2)
                     Spacer()

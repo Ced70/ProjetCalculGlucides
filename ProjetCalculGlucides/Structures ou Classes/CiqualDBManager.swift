@@ -18,14 +18,14 @@ struct CiqualDBManager {
             if let databasePath {
                 var db : Connection?
                 db = try Connection(databasePath)
-                print("DB ouverte")
+//                print("DB ouverte")
                 if let db {
-                    let statement = try db.prepare("SELECT name FROM sqlite_master WHERE type='table'")
-                    for table in statement {
-                        if let tableName = table[0] as? String {
-                            print("Table name: \(tableName)")
-                        }
-                    }
+//                    let statement = try db.prepare("SELECT name FROM sqlite_master WHERE type='table'")
+//                    for table in statement {
+//                        if let tableName = table[0] as? String {
+//                            print("Table name: \(tableName)")
+//                        }
+//                    }
                     for row in try db.prepare("SELECT * FROM Ciqual_2020 WHERE alim_nom_fr LIKE '%\(textToSearch)%'") {
                         let foodTemp = Food()
                         foodTemp.name = row[7] as! String

@@ -19,6 +19,8 @@ struct SearchView: View {
     @State var isLoading = false
     @ObservedObject var searchManager = SearchManager()
     
+    @State var weightWritted: String = ""
+    
     @FocusState private var isTextFieldFocused: Bool
     
     @Environment(\.dismiss) var dismiss
@@ -58,6 +60,28 @@ struct SearchView: View {
                     }
                     if !(idSelected == "") {
                         AddMenuButton(buttonIsClicked: $addButtonIsClicked)
+                            .alert("Choix du poids", isPresented: $addButtonIsClicked) {
+                                HStack {
+                                    TextField("", text: $weightWritted)
+                                        .keyboardType(.numberPad)
+                                    Button("Ok", action: {
+                                        if let weightInt = Float(weightWritted) {
+                                            let foodToAdd = searchManager.searchFoodbyId(idSelected: idSelected)
+                                            if let foodToAdd {
+                                                var food = Food()
+                                                food = foodToAdd
+                                                food.weight = weightInt
+                                                meal.list.append(foodToAdd)
+                                                searchString = ""
+                                                dismiss()
+                                            }
+                                        }
+                                    })
+                                    Button("Annuler", role: .cancel, action: {})
+                                }
+                            } message: {
+                                Text("Entrer le poids souhaité en g: ")
+                            }
                     }
                 }
             }
@@ -76,14 +100,6 @@ struct SearchView: View {
                     }
                 }
             } )
-            .onChange(of: addButtonIsClicked, {
-                let foodToAdd = searchManager.searchFoodbyId(idSelected: idSelected)
-                if let foodToAdd {
-                    meal.list.append(foodToAdd)
-                    searchString = ""
-                    dismiss()
-                }
-            })
             .onChange(of: idSelected, {
                 searchManager.updateSelection(idSelected: idSelected)
             })

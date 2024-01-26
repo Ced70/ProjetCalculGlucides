@@ -19,7 +19,7 @@ struct RatiosView: View {
                 RatioCell(systemName: "sun.max", text: "Midi", value: $ratios.valueLunch)
                 RatioCell(systemName: "birthday.cake", text: "Goûter", value: $ratios.valueSnack)
                 RatioCell(systemName: "moon", text: "Soir", value: $ratios.valueDinner)
-                Text("1 ui / 8 g : représente 1 Unité d'insuline pour 8g de glucides")
+                Text("1 ui / 8 g : représente 1 Unité d'insuline pour 8 g de glucides")
                     .padding()
             }
             .padding()

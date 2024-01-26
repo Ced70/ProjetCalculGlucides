@@ -33,7 +33,6 @@ struct MainView: View {
                         Image(systemName: "divide")
                         Text("Ratios")
                     }
-                    
                 }
         }
         .onAppear(perform: {

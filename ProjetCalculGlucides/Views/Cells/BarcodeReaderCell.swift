@@ -39,9 +39,9 @@ struct BarcodeReaderCell: UIViewControllerRepresentable {
             self.parent = parent
         }
         
-        func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
-            UINotificationFeedbackGenerator().notificationOccurred(.success)
-            switch item {
+        func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
+            print(addedItems)
+            switch addedItems[0] {
             case .barcode(let barcode):
                 parent.scannedCode = barcode.payloadStringValue ?? "Inconnu"
             default:
