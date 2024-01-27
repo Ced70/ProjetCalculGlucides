@@ -117,6 +117,35 @@ class Ratios : ObservableObject, Codable {
             print("Erreur lors de la lecture du fichier: \(error)")
         }
     }
+    
+    func getTimeOfDayRatio() {
+        let now = Date()
+        let calendar = Calendar.current
+        
+        let startBreakfast = DateComponents(hour: 3)
+        let startLunch = DateComponents(hour: 11)
+        let startSnack = DateComponents(hour: 15)
+        let startDinner = DateComponents(hour: 18)
+        
+        let startOfDay = calendar.startOfDay(for: now)
+        if let startTimeBreakfast = calendar.date(byAdding: startBreakfast, to: startOfDay),
+           let startTimeLunch = calendar.date(byAdding: startLunch, to: startOfDay),
+           let startTimeSnack = calendar.date(byAdding: startSnack, to: startOfDay),
+           let startTimeDinner = calendar.date(byAdding: startDinner, to: startOfDay) {
+            if now >= startTimeBreakfast && now < startTimeLunch {
+                self.timeOfRatioSelected = .breakfast
+            }
+            if now >= startTimeLunch && now < startTimeSnack {
+                self.timeOfRatioSelected = .lunch
+            }
+            if now >= startTimeSnack && now < startTimeDinner {
+                self.timeOfRatioSelected = .snack
+            }
+            if now >= startTimeDinner || now < startTimeBreakfast {
+                self.timeOfRatioSelected = .dinner
+            }
+        }
+    }
 }
 
 var ratioPreview = Ratios()

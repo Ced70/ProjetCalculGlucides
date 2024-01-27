@@ -37,6 +37,7 @@ struct MainView: View {
         }
         .onAppear(perform: {
             meal.ratios.loadFromFile()
+            meal.ratios.getTimeOfDayRatio()
         })
     }
 }

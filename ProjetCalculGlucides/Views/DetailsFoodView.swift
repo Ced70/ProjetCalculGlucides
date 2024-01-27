@@ -36,68 +36,78 @@ struct DetailsFoodView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Rectangle()
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.gray)
+                        .frame(width: 200, height: 200)
+                    Text("Pas d'image")
+                        .foregroundStyle(.primary)
+                        .font(.title)
+                }
             }.aspectRatio(contentMode: .fit)
                 .frame(height: 200)
                 .clipped()
             Text(food.name)
                 .font(.title)
-            VStack(alignment: .leading, spacing: 30) {
-                HStack{
-                    Text("Masse : ")
-                        .font(.title2)
-                    TextField("", text: poids)
-                        .focused($isInputActive)
-                        .font(.title2)
-                        .frame(maxWidth: 50)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        .keyboardType(.numberPad)
-                        .toolbar(content: {
-                            ToolbarItem(placement: .keyboard, content: {
-                                Button(action: {
-                                    isInputActive = false
-                                }, label: {
-                                    Text("Valider")
-                                        .foregroundStyle(.green)
-                                        .bold()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 30) {
+                    HStack{
+                        Text("Masse : ")
+                            .font(.title2)
+                        TextField("", text: poids)
+                            .focused($isInputActive)
+                            .font(.title2)
+                            .frame(maxWidth: 50)
+                            .foregroundColor(.blue)
+                            .keyboardType(.numberPad)
+                            .toolbar(content: {
+                                ToolbarItem(placement: .keyboard, content: {
+                                    Button(action: {
+                                        isInputActive = false
+                                    }, label: {
+                                        Text("Valider")
+                                            .foregroundStyle(.green)
+                                            .bold()
+                                    })
                                 })
                             })
-                        })
-                    Text("g")
-                        .font(.title2)
-                    Spacer()
-                }
-                HStack {
-                    Text("Pour 100 g : ")
-                        .font(.title2)
-                    Text(String(format : "%.1f", food.glucidPerHundredGrams))
-                        .foregroundStyle(.red)
-                        .font(.title2)
-                    Text(" g de glucides")
-                        .font(.title2)
-                }
-                if food.weight != 100 {
+                        Text("g")
+                            .font(.title2)
+                        Spacer()
+                    }
                     HStack {
-                        Text("Pour ")
+                        Text("Pour 100 g : ")
                             .font(.title2)
-                        Text(String(format : "%.0f", food.weight))
-                            .foregroundStyle(.red)
-                            .font(.title2)
-                        Text(" g : ")
-                            .font(.title2)
-                        Text(String(format : "%.1f", food.glucids))
+                        Text(String(format : "%.1f", food.glucidPerHundredGrams))
                             .foregroundStyle(.red)
                             .font(.title2)
                         Text(" g de glucides")
                             .font(.title2)
                     }
-                }
-                Spacer()
-                Text("Source des données : \(food.source)")
-                    .font(.title3)
-                    .foregroundStyle(.gray)
-                    .padding(.bottom, 10)
-            }.padding()
+                    if food.weight != 100 {
+                        HStack {
+                            Text("Pour ")
+                                .font(.title2)
+                            Text(String(format : "%.0f", food.weight))
+                                .foregroundStyle(.red)
+                                .font(.title2)
+                            Text(" g : ")
+                                .font(.title2)
+                            Text(String(format : "%.1f", food.glucids))
+                                .foregroundStyle(.red)
+                                .font(.title2)
+                            Text(" g de glucides")
+                                .font(.title2)
+                        }
+                    }
+                    Text("Source : \(food.source)")
+                        .font(.title3)
+                        .foregroundStyle(.gray)
+                        .padding(.bottom, 10)
+                        .lineLimit(3)
+                }.padding()
+            }
+            Spacer()
             DeleteButton(buttonIsClicked: $buttonDeleteIsClicked)
         }.padding()
             .onChange(of: buttonDeleteIsClicked) {

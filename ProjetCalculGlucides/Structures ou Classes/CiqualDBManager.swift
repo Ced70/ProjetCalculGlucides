@@ -30,7 +30,7 @@ struct CiqualDBManager {
                         let foodTemp = Food()
                         foodTemp.name = row[7] as! String
                         foodTemp.glucidPerHundredGrams = Float((row[16] as! String).replacingOccurrences(of: ",", with: ".")) ?? 0.0
-                        foodTemp.source = "Ciqual 2020"
+                        foodTemp.source = "Anses. 2020. Table de composition nutritionnelle des aliments Ciqual"
                         resultsList.append(foodTemp)
                     }
                 }
