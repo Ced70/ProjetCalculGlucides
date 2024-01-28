@@ -47,7 +47,7 @@
 		82600E422B3C3A5E005FEAD6 /* TorchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchManager.swift; sourceTree = "<group>"; };
 		82600E442B3C5A11005FEAD6 /* AddMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMenuButton.swift; sourceTree = "<group>"; };
 		82600E462B3C5F35005FEAD6 /* DetailsFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFoodView.swift; sourceTree = "<group>"; };
-		82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetCalculGlucides.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A6F0DB2B397A8A007E4D9B /* GluciCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GluciCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A6F0DE2B397A8A007E4D9B /* ProjetCalculGlucidesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetCalculGlucidesApp.swift; sourceTree = "<group>"; };
 		82A6F0E02B397A8A007E4D9B /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		82A6F0E22B397A8A007E4D9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		82A6F0DC2B397A8A007E4D9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */,
+				82A6F0DB2B397A8A007E4D9B /* GluciCalc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		82A6F0DA2B397A89007E4D9B /* ProjetCalculGlucides */ = {
+		82A6F0DA2B397A89007E4D9B /* GluciCalc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82A6F0E92B397A8A007E4D9B /* Build configuration list for PBXNativeTarget "ProjetCalculGlucides" */;
+			buildConfigurationList = 82A6F0E92B397A8A007E4D9B /* Build configuration list for PBXNativeTarget "GluciCalc" */;
 			buildPhases = (
 				82A6F0D72B397A89007E4D9B /* Sources */,
 				82A6F0D82B397A89007E4D9B /* Frameworks */,
@@ -188,12 +188,12 @@
 			);
 			dependencies = (
 			);
-			name = ProjetCalculGlucides;
+			name = GluciCalc;
 			packageProductDependencies = (
 				82D811422B5332250037C344 /* SQLite */,
 			);
 			productName = ProjetCalculGlucides;
-			productReference = 82A6F0DB2B397A8A007E4D9B /* ProjetCalculGlucides.app */;
+			productReference = 82A6F0DB2B397A8A007E4D9B /* GluciCalc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82A6F0DA2B397A89007E4D9B /* ProjetCalculGlucides */,
+				82A6F0DA2B397A89007E4D9B /* GluciCalc */,
 			);
 		};
 /* End PBXProject section */
@@ -412,18 +412,20 @@
 				DEVELOPMENT_TEAM = 9XFV259XSK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "L'application nécessite l'utilisation de la caméra";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cedricgillot.ProjetCalculGlucides;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cedricgillot.GluciCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -444,18 +446,20 @@
 				DEVELOPMENT_TEAM = 9XFV259XSK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "L'application nécessite l'utilisation de la caméra";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cedricgillot.ProjetCalculGlucides;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cedricgillot.GluciCalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -476,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82A6F0E92B397A8A007E4D9B /* Build configuration list for PBXNativeTarget "ProjetCalculGlucides" */ = {
+		82A6F0E92B397A8A007E4D9B /* Build configuration list for PBXNativeTarget "GluciCalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82A6F0EA2B397A8A007E4D9B /* Debug */,
